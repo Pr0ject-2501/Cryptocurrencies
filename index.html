@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cryptocurrencies</title>
+    <script src="https://unpkg.com/panzoom@8.7.3/dist/panzoom.min.js"></script>
+    
+    
+<!--CSS-->
+
+    <style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url('015_3.gif');
+        overflow: hidden;
+        font-family: 'DM Serif Text', serif;
+        position: fixed;
+      
+      }
+      
+      .header {
+        position: fixed;
+        color: white;
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(black, white);
+        z-index: 3;
+        text-align: center;
+        /* padding: 20px; */
+        /* font-weight: bold; */
+        font-size: 22pt;
+        /* border-bottom: black;
+        border-bottom: 2px solid; */
+        opacity: 0.5;
+        filter: invert(1);
+      }
+
+      .instructions {
+        position: fixed;
+        color: black;
+        width: 100%;
+        height: 10%;
+        background: linear-gradient(white, black);
+        z-index: 3;
+        text-align: center;
+        /* padding: 20px; */
+        /* font-weight: bold; */
+        font-size: 10pt;
+        /* border-bottom: black;
+        border-bottom: 2px solid; */
+        opacity: 0.5;
+        filter: invert(1);
+        top: 91%;
+      }
+
+      .instructions :first-child {
+        align-self: center;
+      }
+
+      .titre{
+        margin-top: 1%;
+        z-index: 10;
+        filter: invert(1);
+      }
+      
+      .container {
+        position: absolute;
+        width: 65%;
+        height: 75%;
+        z-index: 1;
+      }
+
+      .row{
+      margin-top: 5vh;
+      display: flex;
+      justify-content: space-around;
+      }
+
+      /* #premier{
+        display: flex;
+        justify-content: stretch;
+        justify-items: center;
+        
+        
+      }
+
+      #deuxième{
+        display: flex;
+        justify-items: center;
+        justify-content: stretch;
+        
+      }
+
+      #troisième{
+        display: flex;
+        justify-items: center;
+        justify-content: space-evenly;
+        
+      } */
+
+      .block{
+        width: 120px;
+        height: 40px;
+        background: white;
+        /* margin: 0.3em; */
+        filter: grayscale(1);
+        opacity: 0.4;
+        transition: 3s;
+        background: url("Bitcoin-Cash-Crypto-Logo-PNG-Photos.png") no-repeat 50% 50%;
+        background-size: cover;
+      }
+
+      .block:hover{
+        filter: grayscale(1);
+        opacity: 1;
+        filter: invert(1);
+      }
+
+      .text{
+        z-index: 2;
+        /* background: whitesmoke; */
+        height: 65%;
+        width: 20%;
+        position: absolute;
+        top: 18%;
+        right: 0;
+        text-align: left;
+        /* border: black;
+        border: 2px solid; */
+        opacity: 1;
+        filter: invert(1);
+        z-index: 5;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .references{
+        z-index: 2;
+        /* background: whitesmoke; */
+        height: 65%;
+        width: 20%;
+        position: absolute;
+        top: 105px;
+        left: 0;
+        text-align: left;
+        /* border: black;
+        border: 2px solid; */
+        opacity: 1;
+        filter: invert(1);
+        z-index: 5;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+      }
+
+      a{
+        color: black;
+      }
+
+      p{
+        font-size: 10pt;
+      }
+
+      
+
+      
+      </style>
+
+</head>
+ 
+<body>
+
+
+<!--CONTENU-->
+
+<div id="unmove" class="header">
+  <div class="titre">
+  BLOCKCHAINS AND CRYPTOCURRENCIES
+    </div> 
+ </div>
+
+ <div class="instructions">
+  <h2>drag to move, double click on box for develop, double click on text to close</h2>
+</div>
+
+<div class="references">
+<div id="container0">
+  <h1>Références, Webographie</h1>
+<p>Blockchain et cryptomonnaies, Primavera De Filippi, 2018 <br>
+ <a href="https://www.cairn.info/blockchain-et-cryptomonnaies--9782130811459.htm">https://www.cairn.info/blockchain-et-cryptomonnaies--9782130811459.htm</a> <br> <br>
+  Bitcoin et blockchain : quelles opportunités ?, Jean-Marc Figuet, 2016 <br>
+<a href="https://www.cairn.info/revue-d-economie-financiere-2016-3-page-325.htm">https://www.cairn.info/revue-d-economie-financiere-2016-3-page-325.htm</a>  <br> <br>
+Bitcoin pour remplacer les devises ?, François R. Velde, 2015 <br>
+<a href="https://www.cairn.info/revue-d-economie-financiere-2015-4-page-105.htm">https://www.cairn.info/revue-d-economie-financiere-2015-4-page-105.htm</a> <br> <br>
+Value as Potentiality – Blockchain and the Age of Institutional Challenges, 
+Outi Korhonen/Juho Rantala, 2020 <br>
+<a href="https://fordemocracy.hypotheses.org/2727">https://fordemocracy.hypotheses.org/2727</a> <br> <br>
+Cryptocurrencies: Money, Trust and Regulation, Oonagh McDonald, 2021 <br>
+<a href="https://www.jstor.org/stable/j.ctv1wgvbcz">https://www.jstor.org/stable/j.ctv1wgvbcz</a> <br> <br>
+La crypto-monnaie, une monnaie d’État ?, Marion Roussey, Arte, 2018 <br>
+<a href="https://www.arte.tv/fr/articles/fr/la-crypto-monnaie-venezuela">https://www.arte.tv/fr/articles/fr/la-crypto-monnaie-venezuela</a> <br> <br>
+Le mystère Satoshi : enquête sur l'inventeur du bitcoin | ARTE <br>
+<a href="https://www.youtube.com/watch?v=0ETcLj5jBy4&ab_channel=ARTE">https://www.youtube.com/watch?v=0ETcLj5jBy4&ab_channel=ARTE</a>
+
+
+
+
+  </p>
+</div>
+</div>
+
+<div class="text"> 
+ 
+  <div id="container2">
+           <h1>Création des cryptomonnaies</h1>
+        <p>Les cryptomonnaies sont une des applications 
+          possibles de la technologie blockchain ou chaînes 
+          de blocs, qui est une base de données partagée 
+          cryptographique dans laquelle les informations
+          sont systématiquement vérifiées par les utilisateurs
+          afin de créer un nouveau bloc, participant ainsi à
+          l'élaboration d'une chaîne.
+          La première application en cryptomonnaies de la 
+          technologie blockchain date de 2009, en la personne
+          de Satoshi Nakamoto, ayant publié le 9 janvier sur 
+          SourceForge.net la première version du logiciel Bitcoin,
+          lancant le réseau peer to peer et minant les premiers
+          coins. Basé sur le principe de la spéculation, le
+          Bitcoin mettra du temps à atteindre la valeur du dollar 
+          américain et il connaitra ensuite multiples fluctuations
+          du à sa nature intangible.</p>
+      </div>
+
+      <div id="container3">
+        <h1>Idéologie des Cypherpunks</h1>
+        <p>Les Cypherpunks sont un collectif d'individus, prônant 
+          l'importance du cryptage informatique comme moyen de défense
+          de la vie privée, conscients que la popularité à venir 
+          d'Internet reposeraient sur une économie basée sur la 
+          récolte des données personnelles. Fervents défenseurs de la 
+          liberté d'expression, essentiel à une société ouverte, ils veulent
+          renverser l'ordre étatique et banquier établi grâce à l'informatique.
+          <br>"A private matter is something one doesn't
+          want the whole world to know, but a secret matter is something one
+          doesn't want anybody to know. Privacy is the power to selectively
+          reveal oneself to the world." <br>Eric Hughes
+        </p>
+      </div>
+
+      <div id="container4">
+        <h1>Conjoncture du système monnétaire</h1>
+        <p>Quand le Bitcoin a été créé en 2009, le système monnétaire
+          connait une crise grave survenue quelques années auparavant, 
+          notamment à cause des subprimes, causé par les prêts hypothécaires à
+          risques, résultant de la hausse des taux de remboursements des emprunts.
+          Suivi d'un prévisible krach en 2008, conséquence de cette situation,
+          qui se répand à tous les marchés mondiaux et fait chuter la bourse.
+          La confiance envers le système boursier et les états décroit largement,
+          précipitant les recherches d'alternatives. 
+        </p>
+      </div>
+
+      <div id="container5">
+        <h1>Minage et conséquences</h1>
+        <p>Afin de valider les blocs, et ainsi créer de nouveaux coins,
+          le système repose sur la participation des utilisateurs à calculer
+          et résoudre les opérations cryptographiques, une compétition entre
+          mineurs s'installent où seul le premier à résoudre l'équation 
+          se retrouvent rémunérés.
+          Le minage, à l'époque effectué sur les CPU des ordinateurs, est
+          aujourd'hui accompli grâce aux GPU, cartes graphiques de plus en plus
+          performantes, assemblées en "ferme de minage", salle entière où tournent
+          des dizaines de cartes graphiques.
+          Sur la blockchain Bitcoin, il est de plus en plus difficile de miner, 
+          puisque la majorité des mineurs disposent de moyens et de matériels 
+          inacessibles pour la quasi-totalité des personnes.
+          Le bilan énérgétique du minage est désastreux, selon une estimation
+          d'une étude de l'Université de Cambridge, le minage aurait une consommation
+          électrique annuelle comparable à la Suède, sans compter le recyclage des fermes
+          de minage et des différents composants.
+          Difficile d'estimer les différences de consommation énérgétique entre cryptomonnaies
+          et monnaie traditionnelle mais il évident que le minage n'est pas écologiquement viable. 
+        </p>
+      </div>
+
+      <div id="container6">
+        <h1>Valeur d'échange</h1>
+        <p>Le Bitcoin, l'Ether et les autres cryptomonnaies traditionnelles sont hautement
+          volatiles, leurs valeurs fluctuent en permanence, sur le principe de l'offre et
+          de la demande. Ainsi la valeur du Bitcoin au moment ou j'écris ces mots est de 
+          37.192,15$, rendu inaccessible à la majorité des individus, la cryptomonnaie qui
+          se voulait un nouvel ordre dans le système monnétaire se retrouve à jouer le jeu
+          de la spéculation et de l'influence des grands entrepeneurs, Elon Musk peut, par exemple,
+          avec un seul tweet, fluctuer grandement le taux d'échange du Bitcoin.
+        </p>
+      </div>
+
+      <div id="container7">
+        <h1>Sécurité et probables attaques</h1>
+        <p>L'application de la blockchain en cryptomonnaies n'est pas insensibles aux attaques informatiques,
+          il est toujours possible de hacker les mots de passe des wallets personnels afin de 
+          s'approprier les bitcoins les contenant. Bitcoin a aussi craint à une époque l'attaque des 51%,
+          au début les mineurs étant très peu nombreux, une organisation aurait facilement pu 
+          représenter la majorité de la puissance de calcul, étant donné que la validation d'un bloc
+          se fait sur un consensus commun, les 51% pourrait alors introduire dans la blockchain des blocs
+          falsifiés et ainsi discréditer la chaîne entière.
+          Un tel scénario aurait été supposé il y a quelques années, quand on supposait que la Chine pourrait
+          potentiellement détenir plus de la moitié de la puissance de calcul sur son territoire
+          et attaquer le réseau Bitcoin, en raison de la politique qu'il pratique envers ce dernier.
+          Il semble aujourd'hui plus probable que si effondrement du Bitcoin il y a, il soit plus 
+          en rapport avec le système boursier ou sa volatilité.
+        </p>
+      </div>
+
+      <div id="container12">
+        <h1>Stable Coins</h1>
+        <p>Les Stablecoins sont un dérivé des cryptomonnaies classiques, ayant des valeurs
+          d'échange changeantes, les coins stables fonctionnent en se basant sur des actifs
+          financiers stables, tel que les devises nationales, les métaux précieux, etc...
+          Le Stablecoin bénéficie de la majorité des avantages de la cryptomonnaie à savoir
+          la décentralisation des échanges monnétaires, une monnaie appropriée à son support,
+           tout en s'assurant de ne pas trop fluctuer.
+        </p>
+      </div>
+   </div>
+
+<div id="contain" class="container">
+  
+  <div class="row" id="zéro">
+    <div class="block block-0"></div>
+    
+  
+  </div>
+  
+  <div class="row" id="premier">
+    <div class="block block-1"></div>
+    <div class="block block-2"></div>
+    <div class="block block-3"></div>
+    <div class="block block-4"></div>
+    <div class="block block-5"></div>
+    <div class="block block-6"></div>
+  
+  </div>
+
+  <div class="row" id="deuxième">
+    <div class="block block-7"></div>
+    <div class="block block-8"></div>
+    <div class="block block-9"></div>
+    <div class="block block-10"></div>
+    <div class="block block-11"></div>
+    
+  </div>
+
+  <div class="row" id="troisième">
+    <div class="block block-12"></div>
+    <div class="block block-13"></div>
+    <div class="block block-14"></div>
+    <div class="block block-15"></div>
+    
+  </div>
+
+  <div class="row" id="quatrième">
+    <div class="block block-16"></div>
+    <div class="block block-17"></div>
+    <div class="block block-18"></div>
+    
+  </div>
+ 
+  <div class="row" id="cinquième">
+    <div class="block block-19"></div>
+    <div class="block block-20"></div>
+    
+  </div>            
+ 
+  <div class="row" id="sixième">
+    <div class="block block-21"></div>
+
+
+
+
+  </div>
+
+
+
+<!--JQUERY-->
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  var element = document.querySelector(".container");
+ panzoom(element, {minZoom: 1, maxZoom: 1});
+ 
+ 
+
+ 
+  $(document).ready(function(){
+            
+  $('#container0').hide();
+
+  $('.block-0').dblclick(function(){
+       $('#container0').show();
+             });
+      
+
+   $('#container0').dblclick(function(){
+       $('#container0').hide();
+             }); 
+    
+    $('#container2').hide();
+
+     $('.block-1').dblclick(function(){
+                   $('#container2').show();
+             });
+      
+
+       $('#container2').dblclick(function(){
+                   $('#container2').hide();
+             });
+
+            $('#container3').hide();
+
+             $('.block-2').dblclick(function(){
+                   $('#container3').show();
+             });
+      
+
+       $('#container3').dblclick(function(){
+                   $('#container3').hide();
+             });
+
+              $('#container4').hide();
+
+              $('.block-3').dblclick(function(){
+                    $('#container4').show();
+              });
+        
+
+        $('#container4').dblclick(function(){
+                    $('#container4').hide();
+              });
+
+              $('#container5').hide();
+
+              $('.block-4').dblclick(function(){
+                    $('#container5').show();
+              });
+
+
+              $('#container5').dblclick(function(){
+                    $('#container5').hide();
+              });
+
+                $('#container6').hide();
+
+                $('.block-5').dblclick(function(){
+                      $('#container6').show();
+                });
+
+
+                $('#container6').dblclick(function(){
+                      $('#container6').hide();
+                });
+
+                  $('#container7').hide();
+
+                  $('.block-6').dblclick(function(){
+                        $('#container7').show();
+                  });
+
+
+                  $('#container7').dblclick(function(){
+                        $('#container7').hide();
+                  });
+
+                    $('#container12').hide();
+
+                    $('.block-11').dblclick(function(){
+                          $('#container12').show();
+                    });
+
+
+                    $('#container12').dblclick(function(){
+                          $('#container12').hide();
+                    });
+      
+           });
+
+     </script>
+ 
+</body>
+</html>
